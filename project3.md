@@ -172,7 +172,11 @@ Complete a get started checklist as shown on the image below
 *IMPORTANT NOTE
 In the image below, make sure you change the time of deleting the entry from 6 Hours to 1 Week*
 
+![ip_access_list](/project-3/images_project3/mongodb_access_list.PNG)
+
 Create a MongoDB database and collection inside mLab
+
+![collection](/project-3/images_project3/mongodb_collection.PNG)
 
 In the index.js file, we specified process.env to access environment variables, but we have not yet created this file. So we need to do that now.
 Create a file in your Todo directory and name it .env.
@@ -184,6 +188,8 @@ Add the connection string to access the database in it, just as below:
 
 Ensure to update 'username', 'password', 'network-address' and 'database' according to your setup
 Here is how to get your connection string
+
+![Connect](/project-3/images_project3/mongodb_connect.PNG)
 
 Now we need to update the index.js to reflect the use of .env so that Node.js can connect to the database.
 
@@ -201,6 +207,8 @@ The entire content will be deleted, then,
 0. Press i to enter the insert mode in vim
 
 0. Now, paste the entire code below in the file.
+
+![alt text](/project-3/images_project3/new_index_js.PNG)
 
 Using environment variables to store information is considered more secure and best practice to separate configuration and secret data from the application, instead of writing connection strings directly inside the index.js application file.
 Start your server using the command:
@@ -220,7 +228,11 @@ Now open your Postman, create a POST request to the API [post request](http://<P
 
 *Note: make sure your set header key Content-Type as application/json*
 
+![post reques](/project-3/images_project3/postman_post.PNG)
+
 Create a GET request to your API on [get request](http://<PublicIP-or-PublicDNS>:5000/api/todos.) This request retrieves all existing records from out To-do application (backend requests these records from the database and sends it us back as a response to GET request).
+
+![get request](/project-3/images_project3/postman_get.PNG)
 
 ### STEP 2 – FRONTEND CREATION
 ---
@@ -252,6 +264,8 @@ Change directory to ‘client’
 Open the package.json file
 
 `vi package.json`
+
+![package json](/project-3/images_project3/packageJson_ScriptEdit.PNG)
 
 Add the key value pair in the package.json file "proxy": "http://localhost:5000".
 
@@ -290,7 +304,9 @@ Open Input.js file
 
 `vi Input.js`
 
-Copy and paste the following
+copy and paste the following
+
+![alt text](/project-3/images_project3/Input_js_code.PNG)
 
 To make use of Axios, which is a Promise based HTTP client for the browser and node.js, you need to cd into your client from your terminal and run yarn add axios or npm install axios.
 
@@ -318,7 +334,11 @@ After that open your ListTodo.js
 
 in the ListTodo.js copy and paste the following code
 
+![list Todo](/project-3/images_project3/List_Todo_js.PNG)
+
 Then in your Todo.js file you write the following code
+
+![Todo js](/project-3/images_project3/toDo_js.PNG)
 
 We need to make little adjustment to our react code. Delete the logo and adjust our App.js to look like this.
 
@@ -337,6 +357,8 @@ In the src directory open the App.css
 
 Then paste the following code into App.css:
 
+![App CSS](/project-3/images_project3/App_css.PNG)
+
 Exit
 
 In the src directory open the index.css
@@ -344,6 +366,8 @@ In the src directory open the index.css
 `vim index.css`
 
 Copy and paste the code below:
+
+![index css](/project-3/images_project3/index.css)
 
 Go to the Todo directory
 
