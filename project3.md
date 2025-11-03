@@ -45,7 +45,7 @@ Change to the Todo directory
 
 `npm init`
 
-![NPM INIT](/project-3/images_project3/Npm_init.PNG)
+![NPM INIT](/project-3/images/Npm_init.PNG)
 
 Run the command ls to confirm that you have package.json file created.
 
@@ -70,7 +70,7 @@ Open the index.js file with the command below
 
 Type the code below into it and save. 
 
-![index_js](/project-3/images_project3/index_js.PNG)
+![index_js](/project-3/images/index_js.PNG)
 
 Notice that we have specified to use port 5000 in the code. This will be required later when we go on the browser.
 
@@ -80,17 +80,17 @@ Now it is time to start our server to see if it works. Open your terminal in the
 
 *If everything goes well, you should see Server running on port 5000 in your terminal.*
 
-![port_5000](/project-3/images_project3/port_5000.PNG)
+![port_5000](/project-3/images/port_5000.PNG)
 
 Now we need to open this port in EC2 Security Groups. Refer to Project 1 Step 1 – Installing the Nginx Web Server. There we created an inbound rule to open TCP port 80, you need to do the same for port 5000, like this:
 
-![security rules](/project-3/images_project3/security_rules.PNG)
+![security rules](/project-3/images/security_rules.PNG)
 
 Open up your browser and try to access your server’s Public IP or Public DNS name followed by port 5000:
 
 [node server](http://<PublicIP-or-PublicDNS>:5000)
 
-![welcomeToExpress](/project-3/images_project3/WelcomeToExpress.PNG)
+![welcomeToExpress](/project-3/images/WelcomeToExpress.PNG)
 
 ### Routes
 
@@ -118,7 +118,7 @@ Open the file with the command below
 
 Copy below code in the file.
 
-![Api JS](/project-3/images_project3/api_js.PNG)
+![Api JS](/project-3/images/api_js.PNG)
 
 *Moving forward let create Models directory.*
 
@@ -150,13 +150,13 @@ Inside the models folder, create a file and name it todo.js
 
 Open the file created with `vim todo.js` then paste the code below in the file:
 
-![toDo js](/project-3/images_project3/toDo_js.PNG)
+![toDo js](/project-3/images/toDo_js.PNG)
 
 Now we need to update our routes from the file api.js in ‘routes’ directory to make use of the new model.
 
 In Routes directory, open api.js with `vim api.js`, delete the code inside with `:%d` command and paste there code below into it then save and exit
 
-![New Api js](/project-3/images_project3/new-api_js.PNG)
+![New Api js](/project-3/images/new-api_js.PNG)
 
 *The next piece of our application will be the MongoDB Database*
 
@@ -166,17 +166,17 @@ We need a database where we will store our data. For this we will make use of mL
 
 Complete a get started checklist as shown on the image below
 
-![mongoDb first image](/project-3/images_project3/mongodb_get_started.PNG)
+![mongoDb first image](/project-3/images/mongodb_get_started.PNG)
 
 *Allow access to the MongoDB database from anywhere (Not secure, but it is ideal for testing)*
 *IMPORTANT NOTE
 In the image below, make sure you change the time of deleting the entry from 6 Hours to 1 Week*
 
-![ip_access_list](/project-3/images_project3/mongodb_access_list.PNG)
+![ip_access_list](/project-3/images/mongodb_access_list.PNG)
 
 Create a MongoDB database and collection inside mLab
 
-![collection](/project-3/images_project3/mongodb_collection.PNG)
+![collection](/project-3/images/mongodb_collection.PNG)
 
 In the index.js file, we specified process.env to access environment variables, but we have not yet created this file. So we need to do that now.
 Create a file in your Todo directory and name it .env.
@@ -189,7 +189,7 @@ Add the connection string to access the database in it, just as below:
 Ensure to update 'username', 'password', 'network-address' and 'database' according to your setup
 Here is how to get your connection string
 
-![Connect](/project-3/images_project3/mongodb_connect.PNG)
+![Connect](/project-3/images/mongodb_connect.PNG)
 
 Now we need to update the index.js to reflect the use of .env so that Node.js can connect to the database.
 
@@ -208,7 +208,7 @@ The entire content will be deleted, then,
 
 0. Now, paste the entire code below in the file.
 
-![alt text](/project-3/images_project3/new_index_js.PNG)
+![alt text](/project-3/images/new_index_js.PNG)
 
 Using environment variables to store information is considered more secure and best practice to separate configuration and secret data from the application, instead of writing connection strings directly inside the index.js application file.
 Start your server using the command:
@@ -228,11 +228,11 @@ Now open your Postman, create a POST request to the API [post request](http://<P
 
 *Note: make sure your set header key Content-Type as application/json*
 
-![post reques](/project-3/images_project3/postman_post.PNG)
+![post reques](/project-3/images/postman_post.PNG)
 
 Create a GET request to your API on [get request](http://<PublicIP-or-PublicDNS>:5000/api/todos.) This request retrieves all existing records from out To-do application (backend requests these records from the database and sends it us back as a response to GET request).
 
-![get request](/project-3/images_project3/postman_get.PNG)
+![get request](/project-3/images/postman_get.PNG)
 
 ### STEP 2 – FRONTEND CREATION
 ---
@@ -265,7 +265,7 @@ Open the package.json file
 
 `vi package.json`
 
-![package json](/project-3/images_project3/packageJson_ScriptEdit.PNG)
+![package json](/project-3/images/packageJson_ScriptEdit.PNG)
 
 Add the key value pair in the package.json file "proxy": "http://localhost:5000".
 
@@ -306,7 +306,7 @@ Open Input.js file
 
 copy and paste the following
 
-![alt text](/project-3/images_project3/Input_js_code.PNG)
+![alt text](/project-3/images/Input_js_code.PNG)
 
 To make use of Axios, which is a Promise based HTTP client for the browser and node.js, you need to cd into your client from your terminal and run yarn add axios or npm install axios.
 
@@ -334,11 +334,11 @@ After that open your ListTodo.js
 
 in the ListTodo.js copy and paste the following code
 
-![list Todo](/project-3/images_project3/List_Todo_js.PNG)
+![list Todo](/project-3/images/List_Todo_js.PNG)
 
 Then in your Todo.js file you write the following code
 
-![Todo js](/project-3/images_project3/toDo_js.PNG)
+![Todo js](/project-3/images/toDo_js.PNG)
 
 We need to make little adjustment to our react code. Delete the logo and adjust our App.js to look like this.
 
@@ -357,7 +357,7 @@ In the src directory open the App.css
 
 Then paste the following code into App.css:
 
-![App CSS](/project-3/images_project3/App_css.PNG)
+![App CSS](/project-3/images/App_css.PNG)
 
 Exit
 
@@ -367,7 +367,7 @@ In the src directory open the index.css
 
 Copy and paste the code below:
 
-![index css](/project-3/images_project3/index.css)
+![index css](/project-3/images/index.css)
 
 Go to the Todo directory
 
